@@ -1,0 +1,106 @@
+html,
+body {
+  background: url(images/background_full.jpg) no-repeat center center fixed;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: auto 0;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  overflow-y: scroll; /*Added to prevent modal from causing background to jump when removing scroll bar */
+  overflow-x: hidden !important;
+}
+
+.zone , .card {
+  font-size: 1em;
+  transition: all 0.3s linear;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  -o-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px, inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+}
+
+.jumbotron {
+  height: 50vh;
+  background: rgb(44,114,187);
+  background: linear-gradient(180deg, rgba(44,114,187,1) 21%, rgba(69,245,252,1) 100%);
+  color: white;
+  /* margin: 0; */
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*ALSO needed to prevent modal:close from causeing background and content to shift. */
+.modal-open {
+  overflow-y: scroll;
+  padding-right: 0 !important;
+}
+
+/*Cover and img holder act together to preserve aspect ratio*/
+.cover {
+  object-fit: cover;
+  align-items: stretch;
+}
+
+.img-holder {
+  width: 100%;
+  padding-bottom: 66%;
+  overflow: hidden;
+  display: flex;
+  height: 0;
+}
+
+
+
+/*Sizes iframe in resume page */
+iframe {
+  height: 100vh;
+  width: 100%;
+}
+
+/*Modifies carousel to fill screen on image.html */
+.d-block.w-100 {
+  height:100vh;
+  width:auto;
+  object-fit:cover;
+  }
+
+.page-footer {
+  display: flex;
+  color: #9a9da0;
+  background-color: #343a40;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    background: url(images/background_thin.jpg) no-repeat center center fixed;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: auto 0;
+  }
+  /* Lets jumbotron expand to fit text on small mobile screens. */
+  .jumbotron {
+    height: auto;
+  }
+
+}
