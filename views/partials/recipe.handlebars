@@ -1,0 +1,38 @@
+<div class="col-lg-6 mb-4 recipe" data-budget="{{budget}}" data-time="{{time}}" data-appliance="{{appliance}}">
+    <div class="card h-100">
+        <div class="img-holder">
+            <div class="sub-img-holder">
+                <img class="card-img-top cover" src="{{originalImageURL}}" alt="{{description}}">
+            </div>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="#">{{recipeName}}</a>
+          </h4>
+          <p class="card-text">Cook Time: {{time}} min.</p>
+          <p class="card-text">Ingredients:
+            {{#if ingredients}}
+              <ul>
+                {{#each ingredients}}
+                  <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            {{/if}}
+          </p>
+          <p class="card-text">Steps:
+            {{#if steps}}
+              <ol>
+                {{#each steps}}
+                  <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            {{/if}}
+          </p>
+          <p class="recipe-credit">
+            recipe and photo via: <a href="{{creditURL}}">{{creditName}}</a>.
+          </p>
+          <a class="btn btn-primary" href="#" role="button">view live</a>
+          <a class="btn btn-success" href="#" role="button">GitHub</a>
+        </div>
+    </div>
+</div>
