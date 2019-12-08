@@ -1,0 +1,238 @@
+<!-- Author: Ryan Persson (modified from bootstrap basic template.)
+File: template_page
+Date: 11/2/2019 -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="referrer" content="origin">
+    <!--Added to fix formspree submit error-->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- SVG icons from Font Awesome: http://fontawesome.com/ -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" crossorigin="anonymous">
+
+    <!-- Our custom CSS -- Bootstrap overrides to customize colors and background -->
+    <!-- heather's note: changing filename from style.css to custom.css to
+         adhere to standards re: adding your own custom css on top of bootstrap,
+         see: https://uxplanet.org/how-to-customize-bootstrap-b8078a011203 -->
+    <link rel="stylesheet" type="text/css" href="custom.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Ramaraja|Solway:400,700|Supermercado+One&display=swap" rel="stylesheet">
+
+    <title>snacc.io | make food happen.</title>
+</head>
+
+<body id="main">
+
+  <!-- #region Navbar from bootstrap -->
+  <!-- navbar-dark bg-dark -->
+  <nav class="zone navbar-header sticky-top navbar-expand-lg navbar-dark bg-dark d-flex">
+    <div id="logo"><i class="fas fa-lemon"></i></div>
+    <div class="title">
+      <a class="navbar-brand" href="#">snacc.io</a>
+      <span class="tagline">make food happen.</span>
+    </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+          </ul>
+          <button type="button" class="btn btn-secondary m-2" data-toggle="modal" data-target="#exampleModal">
+              Contact Us
+          </button>
+      </div>
+  </nav>
+  <!-- #endregion -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form role="form" action="http://formspree.io/ryanpersson.dev@gmail.com" method="POST">
+                    <div class="row">
+                        <div class="col-lg-2"></div>
+                        <!--Buffers column on left-->
+                        <div class="col-lg-8 m-2">
+
+                            <input type="hidden" name="_next" value="#" />
+                            <input type="hidden" name="_subject" value="New submission!" />
+                            <input type="text" name="_gotcha" style="display:none" />
+
+                            <div class="form-group">
+                                <label for="InputName">Your Name</label>
+                                <input type="text" class="form-control" name="name" id="InputName"
+                                    placeholder="Enter Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="InputEmail">Your Email</label>
+
+                                <input type="email" class="form-control" id="InputEmail" name="_replyto"
+                                    placeholder="Enter Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="InputMessage">Message</label>
+
+                                <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5"
+                                    required></textarea>
+                            </div>
+
+
+                        </div>
+                        <hr class="hidden-lg">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        <input type="submit" name="submit" id="submit" value="SUBMIT" class="btn btn-info pull-right">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid d-flex">
+      <div class="jumbotron-contents">
+
+        <!-- Filters -->
+        <div class="filters-container">
+          <div class="filter-input-container">
+            <label for="filter-time">
+              <div class="filter-header">
+                <img class="filter-img" src="images/cooking-time.png" alt="cooking time">
+                <span class="filter-label">Cook Time</span>
+              </div>
+            </label>
+            <div class="filter-input-element">
+              <select id="filter-time" class="filter-input" name="filter-time">
+                <option selected value="">Any</option>
+                <option>< 10 min.</option>
+                <option>10 - 30 min.</option>
+                <option>30 - 60 min.</option>
+                <option>60 - 120 min.</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-input-container">
+            <label for="filter-budget">
+              <div class="filter-header">
+                <img class="filter-img" src="images/budget.png" alt="budget">
+                <span class="filter-label">Budget</span>
+              </div>
+            </label>
+            <div class="filter-input-element">
+              <select id="filter-time" class="filter-input" name="filter-time">
+                <option selected value="">Any</option>
+                <option>Broke</option>
+                <option>Thrifty</option>
+                <option>Average</option>
+                <option>Spendy</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-input-container">
+            <fieldset id="filter-appliance" class="filter-fieldset">
+              <label for="filter-appliance">
+                <div class="filter-header">
+                  <img class="filter-img" src="images/stove.png" alt="stove">
+                  <span class="filter-label">Appliances</span>
+                </div>
+              </label>
+
+              <div class="checkbox-item">
+                <input type="checkbox" name="filter-microwave" id="filter-appliance-microwave" value="microwave">
+                <label for="filter-appliance-microwave">Microwave</label>
+              </div>
+
+              <div class="checkbox-item">
+                <input type="checkbox" name="filter-stove" id="filter-appliance-stove" value="stove">
+                <label for="filter-appliance-stove">Stove</label>
+              </div>
+
+              <div class="checkbox-item">
+                <input type="checkbox" name="filter-oven" id="filter-appliance-oven" value="oven">
+                <label for="filter-appliance-oven">Oven</label>
+              </div>
+
+              <div class="checkbox-item">
+                <input type="checkbox" name="filter-appliance" id="filter-appliance-other" value="other">
+                <label for="filter-appliance-other">Other</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <button id="filter-update-button" class="action-button">Search</button>
+        </div><!-- End of Filters -->
+        <div class="vertical-bar"></div>
+        <div class="pitch-container">
+          <p class="lead-1"><span class="accent">...hungry, <i>again.</i></span> (Didn't this just happen a few hours ago?)</p>
+          <p class="lead-2"><span class="accent-2">snacc.io curates recipes for students & other busy people</span> Quickly search by cook time, estimated budet, and even available appliances. We've got the recipes, the rest is up to you.</p>
+          <hr class="lil-break">
+          <div class="whats-cooking">so, what's cooking?</div>
+        </div><!-- end of pitch-container -->
+
+      </div><!-- end of jumbotron contents -->
+    </div><!--end of jumbotron -->
+
+
+
+
+    <!-- Page Content -->
+    <div class="container">
+      <!--<div class="row">-->
+      {{{body}}}
+      <!--</div>-->
+    </div><!-- /.container -->
+    <!-- #region footer -->
+    <footer class="page-footer font-small special-color-dark">
+        <!--Footer Elements-->
+        <div class="container">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            </div>
+            <!-- Copyright -->
+            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </div>
+
+    </footer>
+    <!-- #endregion Footer -->
+
+    <!-- #region Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <!-- #endregion -->
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+<section id="recipes">
+    {{#each this}}
+        {{#if recipeName}}
+            <!-- invokes recipe partial from views/partials/recipe.handlebars -->
+            {{> recipe}}
+        {{/if}}
+    {{/each}}
+</section>
