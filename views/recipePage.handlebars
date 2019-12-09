@@ -1,8 +1,10 @@
-<section id="recipes">
-    {{#each this}}
-        {{#if recipeName}}
-            <!-- invokes recipe partial from views/partials/recipe.handlebars -->
-            {{> recipe}}
-        {{/if}}
-    {{/each}}
-</section>
+<div class="container">
+    <section id="recipes" class="row">
+        {{#each this}}
+            {{#if recipeName}}
+                <!-- invokes recipe partial from views/partials/recipe.handlebars -->
+                {{> recipe}}
+            {{/if}}
+        {{/each}}
+    </section>
+</div>
