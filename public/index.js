@@ -1,54 +1,36 @@
 /*
- * Write your JS code in this file.  Make sure to add your name and
- * @oregonstate.edu email address below.
- *
- * Name: Heather DiRuscio
- * Email: diruscih@oregonstate.edu
- * GitHub: @heatherdiruscio
+ * Authors: Heather DiRuscio and Ryan Persson
+ * Email: diruscih@oregonstate.edu,  perssonr@oregonstate.edu
+ * GitHub: @heatherdiruscio, @RyanPersson
+ * Description: JavaScript for snacc.io
  */
 
-/*
- * You must update this function to use your Handlebars post template to
- * generate HTML representing a single post, given the description, photo URL,
- * price, city, and condition of the item to be sold as arguments to the
- * function.  The generated HTML should then be inserted into the DOM at the
- * end of the <section> element whose id is "posts".
- *
- * The function currently uses native JS methods to generate a new DOM element
- * representing single post, given the specified information, and inserts that
- * post into the DOM.  The new post element has the following structure:
- *
- * <div class="post" data-price="<PRICE>" data-city="<CITY>" data-condition="<CONDITION>">
- *   <div class="post-contents">
- *     <div class="post-image-container">
- *       <img src="<PHOTO_URL>" alt="<ITEM_DESCRIPTION>">
- *     </div>
- *     <div class="post-info-container">
- *       <a href="#" class="post-title"><ITEM_DESCRIPTION></a> <span class="post-price">$<PRICE></span> <span class="post-city">(<CITY>)</span>
- *     </div>
- *   </div>
- * </div>
- */
-function insertNewPost(description, photoURL, price, city, condition) {
+function addRecipe(recipeName, time, complexity, servings, originalImageURL, creditName, creditURL) {
 
   // the content to be placed via handlebars
-  var postContext = {
+  var recipeContent = {
       description: description,
       photoURL: photoURL,
       price: price,
       city: city,
-      condition: condition
+      recipeName: recipeName,
+      time: time,
+      complexity: complexity,
+      servings: servings,
+      originalImageURL: originalImageURL,
+      creditName: creditName,
+      creditURL: creditURL
   };
 
   // a string containing the HTML
-  var postHTML = Handlebars.templates.post(postContext);
+  var recipeHTML = Handlebars.templates.post(recipeContent);
 
   // insert into DOM
-  var postContainer = document.getElementById('posts');
-  postContainer.insertAdjacentHTML('beforeend', postHTML);
+  var recipeContainer = document.getElementById('recipes');
+  recipeContainer.insertAdjacentHTML('beforeend', recipeHTML);
 
-  console.log("== post added via insertNewPost.");
-  
+  console.log("== New recipe added with addRecipe().");
+
 }
 
 
@@ -62,8 +44,8 @@ function insertNewPost(description, photoURL, price, city, condition) {
  * These arrays hold the collection of all post objects and the list of all
  * cities that have been used in posts.
  */
-var allPosts = [];
-var allCities = [];
+var allRecipes = [];
+//var allCities = [];
 
 /*
  * This function checks whether all of the required inputs were supplied by
@@ -72,30 +54,37 @@ var allCities = [];
  * recieve an alert, and no new post is inserted.
  */
 function handleModalAcceptClick() {
+  var recipeName = document.getElementById('recipe-name-input').value.trim();
+  var time = document.getElementById('recipe-time-input').value.trim();
+  var complexity = document.querySelector('#recipe-complexity-fieldset input:checked').value;
+  var servings = document.getElementById('recipe-servings-input').value.trim();
+  var originalImageURL = document.getElementById('recipe-photo-input').value.trim();
+  var creditName = document.getElementById('recipe-credit-name-input').value.trim();
+  var creditURL = document.getElementById('recipe-credit-URL-input').value.trim();
 
-  var description = document.getElementById('post-text-input').value.trim();
-  var photoURL = document.getElementById('post-photo-input').value.trim();
-  var price = document.getElementById('post-price-input').value.trim();
-  var city = document.getElementById('post-city-input').value.trim();
-  var condition = document.querySelector('#post-condition-fieldset input:checked').value;
-
-  if (!description || !photoURL || !price || !city || !condition) {
+  if (!recipeName || !time || !complexity || !servings || !originalImageURL || !creditName) {
     alert("You must fill in all of the fields!");
   } else {
 
-    allPosts.push({
+    allRecipes.push({
       description: description,
       photoURL: photoURL,
       price: price,
       city: city,
-      condition: condition
+      recipeName: recipeName,
+      time: time,
+      complexity: complexity,
+      servings: servings,
+      originalImageURL: originalImageURL,
+      creditName: creditName,
+      creditURL: creditURL
     });
 
-    clearFiltersAndReinsertPosts();
+    clearFiltersAndReinsertRecipes();
 
-    addCityToAllCities(city);
+    //addCityToAllCities(city);
 
-    hideSellSomethingModal();
+    hideAddRecipeModal();
 
   }
 
@@ -106,8 +95,8 @@ function handleModalAcceptClick() {
  * This function clears all filter values, causing all posts to be re-inserted
  * into the DOM.
  */
-function clearFiltersAndReinsertPosts() {
-
+function clearFiltersAndReinsertRecipes() {
+/*
   document.getElementById('filter-text').value = "";
   document.getElementById('filter-min-price').value = "";
   document.getElementById('filter-max-price').value = "";
@@ -117,7 +106,7 @@ function clearFiltersAndReinsertPosts() {
   for (var i = 0; i < filterConditionCheckedInputs.length; i++) {
     filterConditionCheckedInputs[i].checked = false;
   }
-
+*/
   doFilterUpdate();
 
 }
@@ -145,15 +134,16 @@ function addCityToAllCities(city) {
 
 
 /*
- * This function shows the "sell something" modal by removing the "hidden"
+ * This function shows the "add recipe" modal by removing the "hidden"
  * class from the modal and backdrop.
  */
-function showSellSomethingModal() {
-
-  var showSomethingModal = document.getElementById('sell-something-modal');
+function showAddRecipeModal() {
+  console.log('in showAddRecipeModal');
+  
+  var showAddRecipeModal = document.getElementById('add-recipe-modal');
   var modalBackdrop = document.getElementById('modal-backdrop');
 
-  showSomethingModal.classList.remove('hidden');
+  showAddRecipeModal.classList.remove('hidden');
   modalBackdrop.classList.remove('hidden');
 
 }
@@ -162,28 +152,31 @@ function showSellSomethingModal() {
 /*
  * This function clears any user-entered inputs in the "sell something" modal.
  */
-function clearSellSomethingModalInputs() {
-
+function clearAddRecipeModalInputs() {
+/*
   var postTextInputElements = [
     document.getElementById('post-text-input'),
     document.getElementById('post-photo-input'),
     document.getElementById('post-price-input'),
     document.getElementById('post-city-input')
   ];
-
+*/
   /*
    * Clear any text entered in the text inputs.
    */
+
+/*
   postTextInputElements.forEach(function (inputElem) {
     inputElem.value = '';
   });
-
+*/
   /*
    * Grab the originally checked radio button and make sure it's checked.
    */
+   /*
   var checkedPostConditionButton = document.querySelector('#post-condition-fieldset input[checked]');
   checkedPostConditionButton.checked = true;
-
+*/
 }
 
 
@@ -192,15 +185,15 @@ function clearSellSomethingModalInputs() {
  * class from the modal and backdrop.  It also clears any existing inputs in
  * the modal's input fields when the modal is hidden.
  */
-function hideSellSomethingModal() {
+function hideaddRecipeModal() {
 
-  var showSomethingModal = document.getElementById('sell-something-modal');
+  var showAddRecipeModal = document.getElementById('add-recipe-modal');
   var modalBackdrop = document.getElementById('modal-backdrop');
 
-  showSomethingModal.classList.add('hidden');
+  showAddRecipeModal.classList.add('hidden');
   modalBackdrop.classList.add('hidden');
 
-  clearSellSomethingModalInputs();
+  clearAddRecipeModalInputs();
 
 }
 
@@ -219,7 +212,7 @@ function createCityOption(city) {
  * A function to apply the current filters to a specific post.  Returns true
  * if the post passes the filters and should be displayed and false otherwise.
  */
-function postPassesFilters(post, filters) {
+function recipePassesFilters(recipe, filters) {
 
   if (filters.text) {
     var postDescription = post.description.toLowerCase();
@@ -288,18 +281,18 @@ function doFilterUpdate() {
   /*
    * Remove all "post" elements from the DOM.
    */
-  var postContainer = document.getElementById('posts');
-  while(postContainer.lastChild) {
-    postContainer.removeChild(postContainer.lastChild);
+  var recipeContainer = document.getElementById('recipes');
+  while(recipeContainer.lastChild) {
+    recipeContainer.removeChild(recipeContainer.lastChild);
   }
 
   /*
    * Loop through the collection of all "post" elements and re-insert ones
    * that meet the current filtering criteria.
    */
-  allPosts.forEach(function (post) {
-    if (postPassesFilters(post, filters)) {
-      insertNewPost(post.description, post.photoURL, post.price, post.city, post.condition);
+  allRecipes.forEach(function (recipe) {
+    if (recipePassesFilters(recipe, filters)) {
+      insertNewRecipe(recipe.description, post.photoURL, post.price, post.city, post.condition);
     }
   });
 
@@ -319,9 +312,9 @@ function doFilterUpdate() {
  *   condition: "..."
  * }
  */
-function parsePostElem(postElem) {
+function parseRecipeElem(recipeElem) {
 
-  var post = {
+  var recipe = {
     price: postElem.getAttribute('data-price'),
     city: postElem.getAttribute('data-city'),
     condition: postElem.getAttribute('data-condition')
@@ -331,7 +324,7 @@ function parsePostElem(postElem) {
   post.photoURL = postImageElem.src;
   post.description = postImageElem.alt;
 
-  return post;
+  return recipe;
 
 }
 
@@ -344,9 +337,9 @@ window.addEventListener('DOMContentLoaded', function () {
   /*
    * Remember all of the initial post elements initially displayed in the page.
    */
-  var postElems = document.getElementsByClassName('post');
-  for (var i = 0; i < postElems.length; i++) {
-    allPosts.push(parsePostElem(postElems[i]));
+  var recipeElems = document.getElementsByClassName('recipe');
+  for (var i = 0; i < recipeElems.length; i++) {
+    allRecipes.push(parseRecipeElem(recipeElems[i]));
   }
 
   /*
@@ -360,9 +353,9 @@ window.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  var sellSomethingButton = document.getElementById('sell-something-button');
-  if (sellSomethingButton) {
-    sellSomethingButton.addEventListener('click', showSellSomethingModal);
+  var addRecipeButton = document.getElementById('add-recipe-button');
+  if (addRecipeButton) {
+    addRecipeButton.addEventListener('click', showAddRecipeModal);
   }
 
   var modalAcceptButton = document.getElementById('modal-accept');
@@ -372,7 +365,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   var modalHideButtons = document.getElementsByClassName('modal-hide-button');
   for (var i = 0; i < modalHideButtons.length; i++) {
-    modalHideButtons[i].addEventListener('click', hideSellSomethingModal);
+    modalHideButtons[i].addEventListener('click', hideAddRecipeModal);
   }
 
   var filterUpdateButton = document.getElementById('filter-update-button');
