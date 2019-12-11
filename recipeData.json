@@ -8,6 +8,8 @@
   ],
   "meal": "Entree",
   "tags": [
+    "Stove",
+    "Medium",
     "stir fry",
     "noodles",
     "ramen",
@@ -51,6 +53,10 @@
       "Appetizer"
     ],
     "tags": [
+      "Snack",
+      "Appetizer",
+      "Oven",
+      "Easy",
       "game day",
       "party",
       "wings",
@@ -89,6 +95,10 @@
       "Side"
     ],
     "tags": [
+      "Lunch",
+      "Side",
+      "Oven",
+      "Easy",
       "pizza",
       "vegetarian"
     ],
@@ -126,6 +136,11 @@
       "Side"
     ],
     "tags": [
+      "Entree",
+      "Snack",
+      "Side",
+      "Microwave",
+      "Easy",
       "microwave",
       "potato"
     ],
@@ -160,6 +175,9 @@
     ],
     "meal": "Entree",
     "tags": [
+      "Entree",
+      "Stove",
+      "Medium",
       "make ahead",
       "one pot",
       "pasta",
@@ -205,6 +223,10 @@
       "Snack"
     ],
     "tags": [
+      "Breakfast",
+      "Snack",
+      "Microwave",
+      "Easy",
       "fast",
       "breakfast",
       "microwave",
@@ -241,6 +263,9 @@
       "Side"
     ],
     "tags": [
+      "Entree",
+      "Side",
+      "Easy",
       "make ahead",
       "salad",
       "vegetarian"
@@ -275,6 +300,10 @@
       "Snack"
     ],
     "tags": [
+      "Dessert",
+      "Snack",
+      "Microwave",
+      "Easy",
       "microwave",
       "chocolate",
       "cake"
@@ -310,6 +339,10 @@
       "Side"
     ],
     "tags": [
+      "Lunch",
+      "Side",
+      "Microwave",
+      "Easy",
       "make ahead",
       "salad",
       "vegetarian"
@@ -343,6 +376,9 @@
       "Lunch"
     ],
     "tags": [
+      "Entree",
+      "Lunch",
+      "Easy",
       "make ahead",
       "salad",
       "mason jar",
