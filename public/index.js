@@ -34,19 +34,11 @@ function addRecipe(recipeName, time, complexity, servings, originalImageURL, cre
 }
 
 
-/***************************************************************************
- **
- ** You should not modify any of the functions below.
- **
- ***************************************************************************/
-
 /*
  * These arrays hold the collection of all post objects and the list of all
  * cities that have been used in posts.
  */
 var allRecipes = [];
-//var allCities = [];
-
 /*
  * This function checks whether all of the required inputs were supplied by
  * the user and, if so,i nserting a new post into the page constructed using
@@ -82,8 +74,6 @@ function handleModalAcceptClick() {
 
     clearFiltersAndReinsertRecipes();
 
-    //addCityToAllCities(city);
-
     hideAddRecipeModal();
 
   }
@@ -111,28 +101,6 @@ function clearFiltersAndReinsertRecipes() {
 
 }
 
-
-/*
- * This function checks to see if a city is included in the collection of all
- * cities for which we have a post.  If it's not, the new city is added to the
- * collection.
- */
-function addCityToAllCities(city) {
-
-  /*
-   * If city doesn't already exist in the list of cities by which we can
-   * filter, add it.
-   */
-  if (allCities.indexOf(city.toLowerCase()) === -1) {
-    allCities.push(city.toLowerCase());
-    var newCityOption = createCityOption(city);
-    var filterCitySelect = document.getElementById('filter-city');
-    filterCitySelect.appendChild(newCityOption);
-  }
-
-}
-
-
 /*
  * This function shows the "add recipe" modal by removing the "hidden"
  * class from the modal and backdrop.
@@ -153,30 +121,7 @@ function showAddRecipeModal() {
  * This function clears any user-entered inputs in the "sell something" modal.
  */
 function clearAddRecipeModalInputs() {
-/*
-  var postTextInputElements = [
-    document.getElementById('post-text-input'),
-    document.getElementById('post-photo-input'),
-    document.getElementById('post-price-input'),
-    document.getElementById('post-city-input')
-  ];
-*/
-  /*
-   * Clear any text entered in the text inputs.
-   */
-
-/*
-  postTextInputElements.forEach(function (inputElem) {
-    inputElem.value = '';
-  });
-*/
-  /*
-   * Grab the originally checked radio button and make sure it's checked.
-   */
-   /*
-  var checkedPostConditionButton = document.querySelector('#post-condition-fieldset input[checked]');
-  checkedPostConditionButton.checked = true;
-*/
+  /*TODO*/
 }
 
 
@@ -199,16 +144,6 @@ function hideaddRecipeModal() {
 
 
 /*
- * This function creates a new <option> element containing a given city name.
- */
-function createCityOption(city) {
-  var newCityOption = document.createElement('option');
-  newCityOption.textContent = city;
-  return newCityOption;
-}
-
-
-/*
  * A function to apply the current filters to a specific post.  Returns true
  * if the post passes the filters and should be displayed and false otherwise.
  */
@@ -218,26 +153,6 @@ function recipePassesFilters(recipe, filters) {
     var postDescription = post.description.toLowerCase();
     var filterText = filters.text.toLowerCase();
     if (postDescription.indexOf(filterText) === -1) {
-      return false;
-    }
-  }
-
-  if (filters.minPrice) {
-    var filterMinPrice = Number(filters.minPrice);
-    if (Number(post.price) < filterMinPrice) {
-      return false;
-    }
-  }
-
-  if (filters.maxPrice) {
-    var filterMaxPrice = Number(filters.maxPrice);
-    if (Number(post.price) > filterMaxPrice) {
-      return false;
-    }
-  }
-
-  if (filters.city) {
-    if (post.city.toLowerCase() !== filters.city.toLowerCase()) {
       return false;
     }
   }
@@ -262,21 +177,7 @@ function recipePassesFilters(recipe, filters) {
  */
 function doFilterUpdate() {
 
-  /*
-   * Grab values of filters from user inputs.
-   */
-  var filters = {
-    text: document.getElementById('filter-text').value.trim(),
-    minPrice: document.getElementById('filter-min-price').value,
-    maxPrice: document.getElementById('filter-max-price').value,
-    city: document.getElementById('filter-city').value.trim(),
-    conditions: []
-  }
-
-  var filterConditionCheckedInputs = document.querySelectorAll("#filter-condition input:checked");
-  for (var i = 0; i < filterConditionCheckedInputs.length; i++) {
-    filters.conditions.push(filterConditionCheckedInputs[i].value);
-  }
+  //TODO
 
   /*
    * Remove all "post" elements from the DOM.
@@ -314,15 +215,6 @@ function doFilterUpdate() {
  */
 function parseRecipeElem(recipeElem) {
 
-  var recipe = {
-    price: postElem.getAttribute('data-price'),
-    city: postElem.getAttribute('data-city'),
-    condition: postElem.getAttribute('data-condition')
-  };
-
-  var postImageElem = postElem.querySelector('.post-image-container img');
-  post.photoURL = postImageElem.src;
-  post.description = postImageElem.alt;
 
   return recipe;
 
@@ -351,18 +243,6 @@ window.addEventListener('DOMContentLoaded', function () {
   for (var i = 0; i < recipeElems.length; i++) {
     allRecipes.push(parseRecipeElem(recipeElems[i]));
   }
-
-  /*
-   * Grab all of the city names already in the filter dropdown.
-   */
-  var filterCitySelect = document.getElementById('filter-city');
-  if (filterCitySelect) {
-    var filterCityOptions = filterCitySelect.querySelectorAll('option:not([selected])');
-    for (var i = 0; i < filterCityOptions.length; i++) {
-      allCities.push(filterCityOptions[i].value.trim().toLowerCase());
-    }
-  }
-
   var addRecipeButton = document.getElementById('add-recipe-button');
   if (addRecipeButton) {
     addRecipeButton.addEventListener('click', showAddRecipeModal);
