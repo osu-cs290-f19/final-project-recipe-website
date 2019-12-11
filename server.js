@@ -2,6 +2,7 @@
  var path = require('path');
  var express = require('express');
  var exphbs = require('express-handlebars');
+ var fs = require('fs'); // require filesystem to append new recipes
 
  var app = express();
 

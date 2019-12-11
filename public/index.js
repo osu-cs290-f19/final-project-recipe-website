@@ -5,12 +5,12 @@
  * Description: JavaScript for snacc.io
  */
 
-function addRecipe(recipeName, time, complexity, servings, originalImageURL, creditName, creditURL) {
+function insertNewRecipe(recipeName, time, complexity, servings, originalImageURL, creditName, creditURL) {
+
+  /* TODO this function is never called???*/
 
   // the content to be placed via handlebars
   var recipeContent = {
-      description: description,
-      photoURL: photoURL,
       recipeName: recipeName,
       time: time,
       complexity: complexity,
@@ -21,7 +21,7 @@ function addRecipe(recipeName, time, complexity, servings, originalImageURL, cre
   };
 
   // a string containing the HTML
-  var recipeHTML = Handlebars.templates.post(recipeContent);
+  var recipeHTML = Handlebars.templates.recipe(recipeContent);
 
   // insert into DOM
   var recipeContainer = document.getElementById('recipes');
@@ -44,6 +44,7 @@ var allRecipes = [];
  * recieve an alert, and no new post is inserted.
  */
 function handleModalAcceptClick() {
+  console.log('in handleModalAcceptClick');
   var recipeName = document.getElementById('recipe-name-input').value.trim();
   var time = document.getElementById('recipe-time-input').value.trim();
   var complexity = document.querySelector('#recipe-complexity-fieldset input:checked').value;
@@ -56,11 +57,8 @@ function handleModalAcceptClick() {
     alert("You must fill in all of the fields!");
   } else {
 
-    allRecipes.push({
-      description: description,
-      photoURL: photoURL,
-      price: price,
-      city: city,
+  // the content to be stored into JSON
+  var recipeContent = {
       recipeName: recipeName,
       time: time,
       complexity: complexity,
@@ -68,7 +66,24 @@ function handleModalAcceptClick() {
       originalImageURL: originalImageURL,
       creditName: creditName,
       creditURL: creditURL
-    });
+  };
+  console.log('Captured a new recipe from user:' + recipeContent);
+
+  // save to JSON file
+  fs.appendFile('recipeData.json', recipeContent, function (err) {
+    if (err) throw err;
+  console.log('Saved recipe to recipeData.json!');
+  });
+
+  allRecipes.push({
+    recipeName: recipeName,
+    time: time,
+    complexity: complexity,
+    servings: servings,
+    originalImageURL: originalImageURL,
+    creditName: creditName,
+    creditURL: creditURL
+  });
 
     clearFiltersAndReinsertRecipes();
 
@@ -84,17 +99,16 @@ function handleModalAcceptClick() {
  * into the DOM.
  */
 function clearFiltersAndReinsertRecipes() {
-/*
-  document.getElementById('filter-text').value = "";
-  document.getElementById('filter-min-price').value = "";
-  document.getElementById('filter-max-price').value = "";
-  document.getElementById('filter-city').value = "";
 
-  var filterConditionCheckedInputs = document.querySelectorAll("#filter-condition input");
-  for (var i = 0; i < filterConditionCheckedInputs.length; i++) {
-    filterConditionCheckedInputs[i].checked = false;
+  document.getElementById('filter-text').value = "";
+  document.getElementById('filter-time').value = "";
+  document.getElementById('filter-complexity').value = "";
+
+  var filterApplianceCheckedInputs = document.querySelectorAll("#filter-appliance input");
+  for (var i = 0; i < filterApplianceCheckedInputs.length; i++) {
+    filterApplianceCheckedInputs[i].checked = false;
   }
-*/
+
   doFilterUpdate();
 
 }
@@ -191,7 +205,8 @@ function doFilterUpdate() {
    */
   allRecipes.forEach(function (recipe) {
     if (recipePassesFilters(recipe, filters)) {
-      insertNewRecipe(recipe.description, post.photoURL, post.price, post.city, post.condition);
+      /* TODO: insertNewRecipe is not a real function? */
+      insertNewRecipe(recipe.recipeName, recipe.time, recipe.originalImageURL, recipe.creditName, recipe.creditURL, recipe.servings, recipe.complexity);
     }
   });
 
@@ -202,14 +217,6 @@ function doFilterUpdate() {
  * This function parses an existing DOM element representing a single post
  * into an object representing that post and returns that object.  The object
  * is structured like this:
- *
- * {
- *   description: "...",
- *   photoURL: "...",
- *   price: ...,
- *   city: "...",
- *   condition: "..."
- * }
  */
 function parseRecipeElem(recipeElem) {
 
@@ -225,8 +232,8 @@ function parseRecipeElem(recipeElem) {
  *
  */
 
-function getRecipeText(recpeElem) {
-  
+function getRecipeText(recipeElem) {
+
 }
 
 /*
