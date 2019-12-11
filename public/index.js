@@ -11,8 +11,6 @@ function addRecipe(recipeName, time, complexity, servings, originalImageURL, cre
   var recipeContent = {
       description: description,
       photoURL: photoURL,
-      price: price,
-      city: city,
       recipeName: recipeName,
       time: time,
       complexity: complexity,
@@ -139,7 +137,7 @@ function addCityToAllCities(city) {
  */
 function showAddRecipeModal() {
   console.log('in showAddRecipeModal');
-  
+
   var showAddRecipeModal = document.getElementById('add-recipe-modal');
   var modalBackdrop = document.getElementById('modal-backdrop');
 
