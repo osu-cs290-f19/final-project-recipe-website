@@ -1,4 +1,5 @@
 <!-- Filters -->
+<div class="filters-container d-flex">
 <div class="filters-container">
 
   <div class="filter-input-container">
@@ -7,7 +8,7 @@
       <input type="text" name="filter-text" id="filter-text" class="filter-input">
     </div>
   </div>
-
+  
   <div class="filter-input-container">
     <label for="filter-time">
       <div class="filter-header">
@@ -28,19 +29,18 @@
   </div>
 
   <div class="filter-input-container">
-    <label for="filter-budget">
+    <label for="filter-complexity">
       <div class="filter-header">
-        <img class="filter-img" src="images/budget.png" alt="budget">
-        <span class="filter-label">Budget</span>
+        <img class="filter-img" src="images/recipes.png" alt="complexity">
+        <span class="filter-label">Complexity</span>
       </div>
     </label>
     <div class="filter-input-element">
-      <select id="filter-time" class="filter-input" name="filter-time">
+      <select id="filter-complexity" class="filter-input" name="filter-complexity">
         <option selected value="">Any</option>
-        <option>Broke</option>
-        <option>Thrifty</option>
-        <option>Average</option>
-        <option>Spendy</option>
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Hard</option>
       </select>
     </div>
   </div>

@@ -113,7 +113,7 @@ a, a:hover {
    FILTERS STYLING
 *******************/
 .accent {
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 700;
   font-family: 'Solway', cursive;
   line-height: 34px;
@@ -127,8 +127,19 @@ a, a:hover {
   margin: 0 0 0 50px;
 }
 
+.filter-input {
+  min-width: 150px;
+}
+
+.filter-input-element {
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+}
+
 .filter-input-container {
-  margin-top: 15px;
+  padding: 5px;
+  margin: 20px 20px 20px 20px;
 }
 
 .filter-header {
@@ -136,7 +147,9 @@ a, a:hover {
 }
 
 .filter-label {
-  font-weight: 700;
+  font-size: 24px;
+  font-family: "Solway", serif;
+  font-weight: 500;
   margin: 0 0 0 10px;
   line-height: 2;
 }
@@ -173,7 +186,7 @@ a, a:hover {
 }
 
 #filter-update-button {
-  width: 80%;
+  width: 200px;
 }
 
 /* end of filters styling */
