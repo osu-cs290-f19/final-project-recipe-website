@@ -119,8 +119,8 @@ a, a:hover {
   line-height: 34px;
   text-align: center;
   padding: 20px 0 20px 0;
-  text-emphasis-style: circle;
-  text-emphasis-position: under right;
+  //text-emphasis-style: circle;
+  //text-emphasis-position: under right;
 }
 
 .filters-container {
@@ -233,33 +233,29 @@ a, a:hover {
 /*****************************
  * ADD RECIPE BUTTON STYLING
  ****************************/
-#add-recipe-button {
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  height: 60px;
-  width: 60px;
-  border: none;
+.add-recipe-button {
+  height: 280px;
+  width: 280px;
+  border: 1px solid black;
   border-radius: 30px;
-  font-size: 36px;
-  background-color: #f67811;
-  color: #fff;
+  font-size: 46px;
+  background-color: #fff;
+  color: #000;
   cursor: pointer;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
-  z-index: 999;
+  transition: all 0.2s;
+  margin: 50px 0 0 0;
+  text-align: center;
 }
 
-#add-recipe-button:hover,
-#add-recipe-button:focus {
-  right: 27px;
-  bottom: 27px;
-  height: 66px;
-  width: 66px;
-  border-radius: 33px;
-  font-size: 40px;
+.add-recipe-button:hover {
+  border: 1px solid #ababab;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
 }
 
-#add-recipe-button:focus {
+.add-recipe-button:focus {
   outline: none;
 }
 
@@ -277,6 +273,7 @@ a, a:hover {
   background-color: rgba(0, 0, 0, 0.85);
 }
 
+/*
 #add-recipe-modal {
   position: fixed;
   top: 0;
@@ -286,6 +283,7 @@ a, a:hover {
   z-index: 3010;
   overflow: scroll;
 }
+*/
 
 .hidden {
   display: none;
@@ -371,6 +369,12 @@ a, a:hover {
   background-color: #eee;
 }
 /**** END ADD RECIPE MODAL STYLE ****/
+
+.search-recipes-block {
+}
+
+.add-your-own-block {
+}
 
 /*ALSO needed to prevent modal:close from causeing background and content to shift. */
 .modal-open {
