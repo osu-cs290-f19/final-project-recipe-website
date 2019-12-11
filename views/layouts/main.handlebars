@@ -32,7 +32,6 @@ Date: 11/2/2019 -->
 </head>
 
 <body id="main">
-
   <!-- #region Navbar from bootstrap -->
   <!-- navbar-dark bg-dark -->
   <nav class="zone navbar-header sticky-top navbar-expand-lg navbar-dark bg-dark d-flex">
@@ -58,171 +57,11 @@ Date: 11/2/2019 -->
       </div>
   </nav>
   <!-- #endregion -->
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form role="form" action="http://formspree.io/ryanpersson.dev@gmail.com" method="POST">
-                    <div class="row">
-                        <div class="col-lg-2"></div>
-                        <!--Buffers column on left-->
-                        <div class="col-lg-8 m-2">
-
-                            <input type="hidden" name="_next" value="#" />
-                            <input type="hidden" name="_subject" value="New submission!" />
-                            <input type="text" name="_gotcha" style="display:none" />
-
-                            <div class="form-group">
-                                <label for="InputName">Your Name</label>
-                                <input type="text" class="form-control" name="name" id="InputName"
-                                    placeholder="Enter Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="InputEmail">Your Email</label>
-
-                                <input type="email" class="form-control" id="InputEmail" name="_replyto"
-                                    placeholder="Enter Email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="InputMessage">Message</label>
-
-                                <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5"
-                                    required></textarea>
-                            </div>
-
-
-                        </div>
-                        <hr class="hidden-lg">
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                        <input type="submit" name="submit" id="submit" value="SUBMIT" class="btn btn-info pull-right">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid d-flex">
-      <div class="jumbotron-contents">
-
-        <!-- Filters -->
-        <div class="filters-container">
-          <div class="filter-input-container">
-            <label for="filter-time">
-              <div class="filter-header">
-                <img class="filter-img" src="images/cooking-time.png" alt="cooking time">
-                <span class="filter-label">Cook Time</span>
-              </div>
-            </label>
-            <div class="filter-input-element">
-              <select id="filter-time" class="filter-input" name="filter-time">
-                <option selected value="">Any</option>
-                <option>< 10 min.</option>
-                <option>10 - 30 min.</option>
-                <option>30 - 60 min.</option>
-                <option>60 - 120 min.</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="filter-input-container">
-            <label for="filter-budget">
-              <div class="filter-header">
-                <img class="filter-img" src="images/budget.png" alt="budget">
-                <span class="filter-label">Budget</span>
-              </div>
-            </label>
-            <div class="filter-input-element">
-              <select id="filter-time" class="filter-input" name="filter-time">
-                <option selected value="">Any</option>
-                <option>Broke</option>
-                <option>Thrifty</option>
-                <option>Average</option>
-                <option>Spendy</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="filter-input-container">
-            <fieldset id="filter-appliance" class="filter-fieldset">
-              <label for="filter-appliance">
-                <div class="filter-header">
-                  <img class="filter-img" src="images/stove.png" alt="stove">
-                  <span class="filter-label">Appliances</span>
-                </div>
-              </label>
-
-              <div class="checkbox-item">
-                <input type="checkbox" name="filter-microwave" id="filter-appliance-microwave" value="microwave">
-                <label for="filter-appliance-microwave">Microwave</label>
-              </div>
-
-              <div class="checkbox-item">
-                <input type="checkbox" name="filter-stove" id="filter-appliance-stove" value="stove">
-                <label for="filter-appliance-stove">Stove</label>
-              </div>
-
-              <div class="checkbox-item">
-                <input type="checkbox" name="filter-oven" id="filter-appliance-oven" value="oven">
-                <label for="filter-appliance-oven">Oven</label>
-              </div>
-
-              <div class="checkbox-item">
-                <input type="checkbox" name="filter-appliance" id="filter-appliance-other" value="other">
-                <label for="filter-appliance-other">Other</label>
-              </div>
-            </fieldset>
-          </div>
-
-          <button id="filter-update-button" class="action-button">Search</button>
-        </div><!-- End of Filters -->
-        <div class="vertical-bar"></div>
-        <div class="pitch-container">
-          <p class="lead-1"><span class="accent">...hungry, <i>again.</i></span> (Didn't this just happen a few hours ago?)</p>
-          <p class="lead-2"><span class="accent-2">snacc.io curates recipes for students & other busy people</span> Quickly search by cook time, estimated budet, and even available appliances. We've got the recipes, the rest is up to you.</p>
-          <hr class="lil-break">
-          <div class="whats-cooking">so, what's cooking?</div>
-        </div><!-- end of pitch-container -->
-
-      </div><!-- end of jumbotron contents -->
-    </div><!--end of jumbotron -->
-
-
-
-
-    <!-- Page Content -->
-    <div class="container">
-      <!--<div class="row">-->
-      {{{body}}}
-      <!--</div>-->
-    </div><!-- /.container -->
-    <!-- #region footer -->
-    <footer class="page-footer font-small special-color-dark">
-        <!--Footer Elements-->
-        <div class="container">
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">© 2019 Copyright:
-            </div>
-            <!-- Copyright -->
-            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        </div>
-
-    </footer>
-    <!-- #endregion Footer -->
+    {{{body}}}
 
     <!-- #region Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
@@ -232,6 +71,7 @@ Date: 11/2/2019 -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+  -->
     <!-- #endregion -->
 </body>
 
