@@ -1,6 +1,14 @@
 <!-- Filters -->
 <div class="filters-container d-flex">
+<div class="filters-container">
 
+  <div class="filter-input-container">
+    <label for="filter-text" class="filter-input-label">Text</label>
+    <div class="filter-input-element">
+      <input type="text" name="filter-text" id="filter-text" class="filter-input">
+    </div>
+  </div>
+  
   <div class="filter-input-container">
     <label for="filter-time">
       <div class="filter-header">
@@ -11,8 +19,9 @@
     <div class="filter-input-element">
       <select id="filter-time" class="filter-input" name="filter-time">
         <option selected value="">Any</option>
-        <option>< 10 min.</option>
-        <option>10 - 30 min.</option>
+        <option>
+          < 10 min.</option> <option>10 - 30 min.
+        </option>
         <option>30 - 60 min.</option>
         <option>60 - 120 min.</option>
       </select>

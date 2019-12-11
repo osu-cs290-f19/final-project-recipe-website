@@ -328,6 +328,16 @@ function parseRecipeElem(recipeElem) {
 
 
 /*
+ * This function gets all of the data fields from a recipe as text in order to apply the search function.
+ *
+ *
+ */
+
+function getRecipeText(recpeElem) {
+  
+}
+
+/*
  * Wait until the DOM content is loaded, and then hook up UI interactions, etc.
  */
 window.addEventListener('DOMContentLoaded', function () {
