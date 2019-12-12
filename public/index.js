@@ -22,6 +22,7 @@ function insertNewRecipe(recipeName, time, complexity, servings, originalImageUR
 
   // a string containing the HTML
   var recipeHTML = Handlebars.templates.recipe(recipeContent);
+  submitRecipe(recipeContent);
 
   // insert into DOM
   var recipeContainer = document.getElementById('recipes');
@@ -31,9 +32,8 @@ function insertNewRecipe(recipeName, time, complexity, servings, originalImageUR
 
 }
 
-function submitRecipe() {
-  console.log("recipe submitted");
-  handleModalAcceptClick();
+function submitRecipe(newRecipe) {
+
 }
 
 
