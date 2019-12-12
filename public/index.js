@@ -31,6 +31,9 @@ function insertNewRecipe(recipeName, time, complexity, servings, originalImageUR
 
 }
 
+function submitRecipe() {
+  console.log("recipe submitted");
+}
 
 /*
  * These arrays hold the collection of all post objects and the list of all
