@@ -1,0 +1,408 @@
+[
+  {
+  "recipeName": "Ramen Noodle Stir Fry",
+  "time": 30,
+  "complexity": "Medium",
+  "appliance": [
+    "Stove"
+  ],
+  "meal": "Entree",
+  "tags": [
+    "Stove",
+    "Medium",
+    "stir fry",
+    "noodles",
+    "ramen",
+    "veggies"
+  ],
+  "servings": 3,
+  "ingredients": [
+    "9 ounces ramen noodles , ~3 packs (discard the flavor packet)",
+    "1 tbsp peanut oil (or other high-heat oil)",
+    "1 tsp minced garlic",
+    "1 tsp minced ginger",
+    "4 oz shiitake mushrooms , stems removed, sliced",
+    "1 small head of broccoli , cut into florets and sliced julienne",
+    "1/2 red bell pepper , sliced julienne",
+    "1 egg , lightly scrambled (optional)",
+    "2 scallions, sliced",
+    "1 heaping tablespoon minced cilantro"
+  ],
+  "steps": [
+    "Whisk the sauce ingredients together in a bowl and set aside.",
+    "Bring a medium pot of water to boil over high heat, and cook the noodles according to package directions.",
+    "Meanwhile, heat the oil in a large skillet or wok over medium-high heat until shimmering.",
+    "Add the garlic, ginger, mushrooms, broccoli, and peppers, and saute for about a minute.",
+    "Add the scrambled egg, if using, and stir until it's mostly set up. Mix in with the vegetables.",
+    "Add the noodles. Drizzle the sauce over the stir fry, plus a big pinch of cilantro, and mix well.",
+    "Garnish with scallions and more cilantro before serving."
+  ],
+  "creditURL": "https://soupaddict.com/ramen-noodle-stir-fry/",
+  "creditName": "Soup Addict",
+  "originalImageURL": "https://s3-us-west-2.amazonaws.com/images.soupaddict.com/ramen-noodle-stir-fry-0695-0417.jpg"
+  },
+  {
+    "recipeName": "Oven-Baked Buffalo Wings",
+    "time": 45,
+    "complexity": "Easy",
+    "appliance": [
+      "Oven"
+    ],
+    "meal": [
+      "Snack",
+      "Appetizer"
+    ],
+    "tags": [
+      "Snack",
+      "Appetizer",
+      "Oven",
+      "Easy",
+      "game day",
+      "party",
+      "wings",
+      "buffalo"
+    ],
+    "servings": 6,
+    "ingredients": [
+      "1¼ cups (one 12-ounce bottle) sweet chile sauce",
+      "1 tablespoon hot sauce, or more to taste",
+      "2 tablespoons soy sauce",
+      "1 tablespoon Worcestershire sauce",
+      "1 teaspoon garlic powder",
+      "2 dozen chicken wings",
+      "Cilantro, for garnish (optional)"
+    ],
+    "steps": [
+      "Preheat the oven to 375°F. Line a baking sheet with parchment paper or aluminum foil.",
+      "In a large bowl, mix the sweet chile sauce with the hot sauce, soy sauce, Worcestershire sauce and garlic powder to combine.",
+      "Add the chicken wings to the bowl and toss well to coat. The glaze should be thick enough to easily coat the chicken.",
+      "Transfer the chicken to the prepared baking sheet and roast until the chicken is fully cooked, 15 to 20 minutes. Raise the oven temperature to 425°F and continue to cook until the glaze begins to brown, about 5 minutes more.",
+      "Serve and garnish with cilantro. Eat immediately!"
+    ],
+    "creditURL": "https://www.purewow.com/recipes/buffalo-wings",
+    "creditName": "Pure Wow",
+    "originalImageURL": "https://purewows3.imgix.net/images/articles/2018_01/baked-buffalo-wings-921.jpg"
+  },
+  {
+    "recipeName": "Naan Pizza",
+    "time": 15,
+    "complexity": "Easy",
+    "appliance": [
+      "Oven"
+    ],
+    "meal": [
+      "Lunch",
+      "Side"
+    ],
+    "tags": [
+      "Lunch",
+      "Side",
+      "Oven",
+      "Easy",
+      "pizza",
+      "vegetarian"
+    ],
+    "servings": 2,
+    "ingredients": [
+      "2 plain naans",
+      "2 tbsp. caramelised red onion chutney",
+      "50 g (2oz) soft goat's cheese, crumbled",
+      "75 g (3oz) cherry tomatoes, quartered",
+      "2 fresh thyme sprigs, leaves picked",
+      "Small handful arugula",
+      "Extra virgin olive oil, to drizzle (optional)"
+
+    ],
+    "steps": [
+      "Preheat oven to 400° F Put the naans on a baking sheet, then spread over the onion chutney.",
+      "Dot over the goat's cheese, tomatoes and thyme leaves, then season with pepper.",
+      "Cook in the oven for 5-10min until the cheese has softened and the pizza is piping hot.",
+      "Garnish with argugula, drizzle with oil."
+    ],
+    "creditURL": "https://www.goodhousekeeping.com/uk/food/recipes/a536961/naan-pizza/",
+    "creditName": "Good Housekeeping",
+    "originalImageURL": "https://hips.hearstapps.com/ame-prod-goodhousekeeping-assets.s3.amazonaws.com/main/embedded/6961/ky-naan-pizza-150513-de.jpg"
+  },
+  {
+    "recipeName": "Loaded Potato",
+    "time": 10,
+    "complexity": "Easy",
+    "appliance": [
+      "Microwave"
+    ],
+    "meal": [
+      "Entree",
+      "Snack",
+      "Side"
+    ],
+    "tags": [
+      "Entree",
+      "Snack",
+      "Side",
+      "Microwave",
+      "Easy",
+      "microwave",
+      "potato"
+    ],
+    "servings": 1,
+    "ingredients": [
+      "1 russet potato, washed and scrubbed",
+      "1 tablespoon oil",
+      "salt, to taste",
+      "2 slices bacon",
+      "¼ cup shredded cheddar cheese",
+      "sour cream, to serve",
+      "fresh chive, to serve"
+    ],
+    "steps": [
+      "Poke holes in the potato with a fork, then rub with oil and salt.",
+      "Place the bacon slices on the same plate as the potato, microwave for 7-9 minutes until the bacon is crispy and the potato is tender. Make sure the bacon does not burn.",
+      "Crumble the bacon after it’s cooled down.",
+      "Slice the potato in half, then use a fork to fluff up the insides.",
+      "Sprinkle the cheese on top, then microwave for another 30 seconds.",
+      "Top with sour cream, the crushed bacon bits, and the chives."
+    ],
+    "creditURL": "https://tasty.co/recipe/microwave-10-minute-loaded-potato",
+    "creditName": "Tasty.co",
+    "originalImageURL": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/71473cfc2a2447b9930d701c3c7fe569/BFV28873_6MicrowaveMealsHACK.jpg"
+  },
+  {
+    "recipeName": "One Pot Chili Pasta",
+    "time": 40,
+    "complexity": "Medium",
+    "appliance": [
+      "Stove"
+    ],
+    "meal": "Entree",
+    "tags": [
+      "Entree",
+      "Stove",
+      "Medium",
+      "make ahead",
+      "one pot",
+      "pasta",
+      "beef"
+    ],
+    "servings": 9,
+    "ingredients": [
+      "1 Tbsp olive oil",
+      "1 medium onion",
+      "2 cloves garlic",
+      "1/2 lb ground beef",
+      "2 Tbsp flour",
+      "2 Tbsp chili powder",
+      "15 oz can tomato sauce",
+      "15 oz can diced tomatoes",
+      "15 oz can black beans",
+      "15 oz can kidney beans",
+      "1 cup frozen corn kernels",
+      "2 cups uncooked elbow macaroni",
+      "2 cups beef broth",
+      "1 cup shredded cheese"
+    ],
+    "steps": [
+      "Dice the onion and mince the garlic. Cook both in a large pot with olive oil over medium heat for 1-2 minutes, or until soft and transparent. Add the ground beef and continue to stir and cook until it is fully browned. If using a high fat ground beef, drain off the excessive after it is browned.",
+      "Add the flour and chili powder to the pot and stir to coat the meat. Continue to stir and cook the coated meat for 1-2 minutes more. The flour and chili powder may coat the bottom of the pot, but that's okay. Just be careful to not let it burn.",
+      "Drain and rinse the black and kidney beans. Add the beans, tomato sauce, diced tomato, and corn kernels to the pot. Stir well and dissolve the flour/chili powder mixture from the bottom of the pot.",
+      "Add the dry macaroni and two cups of beef broth to the pot and stir to combine. Place a lid on top, turn the heat up to high, and let the pot come to a boil. Once it reaches a boil, give it a quick stir to loosen any pasta stuck to the bottom of the pot, replace the lid, and turn the heat down to medium-low. Let the pot simmer on medium-low for about 15 minutes, or until the pasta is soft and has absorbed most of the liquid. Stir the pot one or two times during the 15 minutes to loosen any pasta stuck to the bottom.",
+      "Once the pasta is fully cooked, turn the heat off and add the cheese. Stir the cheese into the pasta until it has melted in and become slightly creamy. Serve hot."
+    ],
+    "creditURL": "https://www.budgetbytes.com/snap-challenge-one-pot-chili-pasta/",
+    "creditName": "Budget Bytes",
+    "originalImageURL": "https://www.budgetbytes.com/wp-content/uploads/2014/09/One-Pot-Chili-Pasta-front.jpg"
+  },
+  {
+    "recipeName": "Chia and Flaxseed Microwave Oatmeal",
+    "time": 4,
+    "complexity": "Easy",
+    "appliance": [
+      "Microwave"
+    ],
+    "meal": [
+      "Breakfast",
+      "Snack"
+    ],
+    "tags": [
+      "Breakfast",
+      "Snack",
+      "Microwave",
+      "Easy",
+      "fast",
+      "breakfast",
+      "microwave",
+      "oatmeal"
+    ],
+    "servings": 1,
+    "ingredients": [
+      "1/3 cup rolled oats",
+      "1/2 cup milk of choice",
+      "1/2 tablespoon chia seeds",
+      "1 tbsp flaxseed meal",
+      "1 tbsp nut butter",
+      "Cinnamon, to taste",
+      "Honey, to taste",
+      "Toppings of choice (pepitas, nuts, dried and/or fresh fruit)"
+    ],
+    "steps": [
+      "Using a microwave-safe bowl, add in the oats, milk and chia seeds.",
+      "Microwave on regular for 3-4 minutes (3 minutes gives you a chewier oats; whichever you prefer).",
+      "Add flaxseed meal, a little extra milk if you prefer, honey, cinnamon, nut butter and whatever toppings you want. Enjoy!"
+    ],
+    "creditURL": "https://spoonuniversity.com/recipe/microwave-oatmeal-with-chia-and-flaxseed",
+    "creditName": "Spoon University",
+    "originalImageURL": "https://spoonuniversity.com/wp-content/uploads/2014/06/oatmeal21-1024x678.jpg"
+  },
+  {
+    "recipeName": "Make Ahead Kale White Bean and Pesto Salad",
+    "time": 20,
+    "complexity": "Easy",
+    "appliance": [
+    ],
+    "meal": [
+      "Entree",
+      "Side"
+    ],
+    "tags": [
+      "Entree",
+      "Side",
+      "Easy",
+      "make ahead",
+      "salad",
+      "vegetarian"
+    ],
+    "servings": 4,
+    "ingredients": [
+      "6 cups kale, finely chopped",
+      "15 oz. can cannellini beans",
+      "1 cooked chicken breast",
+      "1 cup grape tomatoes",
+      "1/2 cup pesto",
+      "1 large lemon, cut into wedges"
+    ],
+    "steps": [
+      "Place the finely chopped kale in a large bowl. Rinse and drain the cannellini beans, slice the tomatoes in half, and then add them both to the bowl. Chop or shred the chicken, and add it to the bowl as well.",
+      "Add the pesto to the bowl with the other salad ingredients, then toss until everything is lightly coated in pesto. Taste and add more pesto if desired",
+      "Serve the salad immediately, or refrigerate until ready to eat. Serve each portion of the salad with a wedge of lemon and squeeze the fresh lemon juice over top just before eating."
+    ],
+    "creditURL": "https://www.budgetbytes.com/make-ahead-kale-white-bean-and-pesto-salad/",
+    "creditName": "Budget Bytes",
+    "originalImageURL": "https://www.budgetbytes.com/wp-content/uploads/2018/06/Kale-White-Bean-and-Pesto-Salad-bowl-1.jpg"
+  },
+  {
+    "recipeName": "Chocolate Mug Cake",
+    "time": 10,
+    "complexity": "Easy",
+    "appliance": [
+      "Microwave"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "tags": [
+      "Dessert",
+      "Snack",
+      "Microwave",
+      "Easy",
+      "microwave",
+      "chocolate",
+      "cake"
+    ],
+    "servings": 1,
+    "ingredients": [
+      "3+ tbsp chocolate chips",
+      "1 tablespoon olive oil",
+      "2 tablespoons coconut flour",
+      "2 tablespoons water",
+      "1/8 teaspoon baking soda",
+      "1 egg"
+    ],
+    "steps": [
+      "Combine chocolate chips and olive oil in a microwave-safe mug; heat in microwave until melted, 20 to 30 seconds.",
+      "Stir coconut flour, water, and baking soda into chocolate mixture using a fork.",
+      "Add egg and coffee extract to chocolate mixture; stir well.",
+      "Heat in microwave until cake is cooked through, about 1 1/2 minutes. Cool for about 2 minutes before eating."
+    ],
+    "creditURL": "https://www.allrecipes.com/recipe/235539/best-mug-cake-paleo/",
+    "creditName": "AllRecipes",
+    "originalImageURL": "https://images.media-allrecipes.com/userphotos/720x405/2535866.jpg"
+  },
+  {
+    "recipeName": "Edamame, Cranberry, and Feta Salad",
+    "time": 20,
+    "complexity": "Easy",
+    "appliance": [
+      "Microwave"
+    ],
+    "meal": [
+      "Lunch",
+      "Side"
+    ],
+    "tags": [
+      "Lunch",
+      "Side",
+      "Microwave",
+      "Easy",
+      "make ahead",
+      "salad",
+      "vegetarian"
+    ],
+    "servings": 4,
+    "ingredients": [
+      "2 cups frozen shelled edamame",
+      "2 cups dried cranberries",
+      "1 tablespoon extra virgin olive oil",
+      "freshly grated pepper to taste",
+      "1 cup crumbled feta cheese"
+    ],
+    "steps": [
+      "Defrost edamame in microwave and allow to cool completely.",
+      "Toss edamame and cranberries together with olive oil and pepper until combined.",
+      "Gently stir in the feta cheese.",
+      "Refrigerate until ready to serve."
+    ],
+    "creditURL": "https://www.loveandzest.com/edamame-cranberry-feta-salad/",
+    "creditName": "Love and Zest",
+    "originalImageURL": "https://www.loveandzest.com/wp-content/uploads/2013/12/Edamame-Cranberry-Feta-Salad-5894.jpg"
+  },
+  {
+    "recipeName": "Southwest Chicken Mason Jar Salad",
+    "time": 10,
+    "complexity": "Easy",
+    "appliance": [
+    ],
+    "meal": [
+      "Entree",
+      "Lunch"
+    ],
+    "tags": [
+      "Entree",
+      "Lunch",
+      "Easy",
+      "make ahead",
+      "salad",
+      "mason jar",
+      "lunch"
+    ],
+    "servings": 4,
+    "ingredients": [
+      "2 tablespoons southwest ranch, avocado ranch or chipotle ranch dressing",
+      "1 roma tomato, diced",
+      "¼ cup diced cucumber",
+      "¼ cup corn",
+      "½ cup black beans",
+      "½ jalapeno, sliced (or you can do pickled jalapenos)",
+      "¾ cup diced, grilled chicken breasts",
+      "¼ avocado, sliced",
+      "1 cup chopped romaine"
+    ],
+    "steps": [
+      "Add all ingredients into a 16 oz jar.",
+      "Keep in fridge until ready to eat.",
+      "Pour ingredients into a bowl and serve."
+    ],
+    "creditURL": "https://www.ambitiouskitchen.com/four-mason-jar-salads-with-just-bare-chicken/",
+    "creditName": "Ambitious Kitchen",
+    "originalImageURL": "https://www.ambitiouskitchen.com/wp-content/uploads/2017/08/Southwest-Chicken-Salad.jpg"
+  }
+]
