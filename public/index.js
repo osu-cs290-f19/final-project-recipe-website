@@ -69,11 +69,6 @@ function handleModalAcceptClick() {
   };
   console.log('Captured a new recipe from user:' + recipeContent);
 
-  // save to JSON file
-  // fs.writeFile('recipeData.json', JSON.stringify(recipeContent), function (err) {
-  //   console.log(err);
-  // });
-
   allRecipes.push({
     recipeName: recipeName,
     time: time,
@@ -83,8 +78,6 @@ function handleModalAcceptClick() {
     creditName: creditName,
     creditURL: creditURL
   });
-
-    clearFiltersAndReinsertRecipes();
 
     hideAddRecipeModal();
 
@@ -112,21 +105,6 @@ function clearFiltersAndReinsertRecipes() {
 
 }
 
-/*
- * This function shows the "add recipe" modal by removing the "hidden"
- * class from the modal and backdrop.
- */
-function showAddRecipeModal() {
-  console.log('in showAddRecipeModal');
-
-  var showAddRecipeModal = document.getElementById('add-recipe-modal');
-  var modalBackdrop = document.getElementById('modal-backdrop');
-
-  showAddRecipeModal.classList.remove('hidden');
-  modalBackdrop.classList.remove('hidden');
-
-}
-
 
 /*
  * This function clears any user-entered inputs in the "sell something" modal.
@@ -143,11 +121,8 @@ function clearAddRecipeModalInputs() {
  */
 function hideAddRecipeModal() {
 
-  var AddRecipeModal = document.getElementById('addRecipeModal');
-
-  AddRecipeModal.classList.add('hidden');
-
-  clearAddRecipeModalInputs();
+  $('#addRecipeModal').hide();
+  $('.modal-backdrop').hide();
 
 }
 
