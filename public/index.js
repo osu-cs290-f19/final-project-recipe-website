@@ -33,6 +33,12 @@ function insertNewRecipe(recipeName, time, complexity, servings, originalImageUR
 }
 
 function submitRecipe(newRecipe) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "http://localhost:3000/recipes");
+  xhr.setRequestHeader("Content-Type", "application/json");
+  console.log(JSON.stringify(newRecipe));
+  xhr.send(JSON.stringify(newRecipe));
+  console.log("recipe submmited");
 
 }
 
