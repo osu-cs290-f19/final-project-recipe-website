@@ -142,7 +142,7 @@ function clearAddRecipeModalInputs() {
  * class from the modal and backdrop.  It also clears any existing inputs in
  * the modal's input fields when the modal is hidden.
  */
-function hideaddRecipeModal() {
+function hideAddRecipeModal() {
 
   var showAddRecipeModal = document.getElementById('add-recipe-modal');
   var modalBackdrop = document.getElementById('modal-backdrop');
@@ -222,7 +222,7 @@ function doFilterUpdate() {
 function parseRecipeElem(recipeElem) {
 
 
-  return recipe;
+  // return recipe;
 
 }
 
@@ -261,6 +261,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var modalHideButtons = document.getElementsByClassName('modal-hide-button');
   for (var i = 0; i < modalHideButtons.length; i++) {
+    console.log("added listener to hideModal");
     modalHideButtons[i].addEventListener('click', hideAddRecipeModal);
   }
 
