@@ -110,7 +110,12 @@ function clearFiltersAndReinsertRecipes() {
  * This function clears any user-entered inputs in the "sell something" modal.
  */
 function clearAddRecipeModalInputs() {
-  /*TODO*/
+  document.getElementById('recipe-name-input').value = "";
+  document.getElementById('recipe-time-input').value = "";
+  document.getElementById('recipe-servings-input').value = "";
+  document.getElementById('recipe-photo-input').value = "";
+  document.getElementById('recipe-credit-name-input').value = "";
+  document.getElementById('recipe-credit-URL-input').value = "";
 }
 
 
@@ -121,8 +126,8 @@ function clearAddRecipeModalInputs() {
  */
 function hideAddRecipeModal() {
 
-  $('#addRecipeModal').hide();
-  $('.modal-backdrop').hide();
+ $('#addRecipeModal').hide();
+ $('.modal-backdrop').hide();
 
 }
 
