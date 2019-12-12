@@ -5,17 +5,7 @@
  * Description: JavaScript for snacc.io
  */
 
-//   // a string containing the HTML
-//   var recipeHTML = Handlebars.templates.recipe(recipeContent);
-//   submitRecipe(recipeContent);
-
-//   // insert into DOM
-//   var recipeContainer = document.getElementById('recipes');
-//   recipeContainer.insertAdjacentHTML('beforeend', recipeHTML);
-
-//   console.log("== New recipe added with addRecipe().");
-
-// }
+var allRecipes = [];
 
 function submitRecipe(newRecipe) {
   var xhr = new XMLHttpRequest();
@@ -26,10 +16,6 @@ function submitRecipe(newRecipe) {
   console.log("recipe submmited");
 
 }
-
-
-var allRecipes = [];
-
 
 function handleModalAcceptClick() {
   console.log('in handleModalAcceptClick');
@@ -54,6 +40,11 @@ function handleModalAcceptClick() {
 
   allRecipes.push(recipeContent);
   submitRecipe(recipeContent);
+
+  var recipeHTML = Handlebars.templates.recipe(recipeContent);	
+  var recipeContainer = document.getElementById('recipes');	  
+  recipeContainer.insertAdjacentHTML('beforeend', recipeHTML);
+  allRecipes.push(recipeHTML);
 
   hideAddRecipeModal();
   clearAddRecipeModalInputs();
@@ -146,9 +137,6 @@ function doFilterUpdate() {
 
 function parseRecipeElem(recipeElem) {
 
-
-  // return recipe;
-
 }
 
 
@@ -166,12 +154,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var recipeElems = document.getElementsByClassName('recipe');
   for (var i = 0; i < recipeElems.length; i++) {
-    allRecipes.push(parseRecipeElem(recipeElems[i]));
+    allRecipes.push(recipeElems[i]);
   }
 
   var filterUpdateButton = document.getElementById('filter-update-button');
   if (filterUpdateButton) {
-    filterUpdateButton.addEventListener('click', doFilterUpdate)
+    filterUpdateButton.addEventListener('click', doFilterUpdate);
   }
 
 });
