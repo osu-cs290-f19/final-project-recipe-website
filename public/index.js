@@ -5,17 +5,17 @@
  * Description: JavaScript for snacc.io
  */
 
-  // a string containing the HTML
-  var recipeHTML = Handlebars.templates.recipe(recipeContent);
-  submitRecipe(recipeContent);
+//   // a string containing the HTML
+//   var recipeHTML = Handlebars.templates.recipe(recipeContent);
+//   submitRecipe(recipeContent);
 
-  // insert into DOM
-  var recipeContainer = document.getElementById('recipes');
-  recipeContainer.insertAdjacentHTML('beforeend', recipeHTML);
+//   // insert into DOM
+//   var recipeContainer = document.getElementById('recipes');
+//   recipeContainer.insertAdjacentHTML('beforeend', recipeHTML);
 
-  console.log("== New recipe added with addRecipe().");
+//   console.log("== New recipe added with addRecipe().");
 
-}
+// }
 
 function submitRecipe(newRecipe) {
   var xhr = new XMLHttpRequest();
