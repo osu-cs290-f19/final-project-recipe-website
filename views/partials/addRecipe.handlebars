@@ -13,28 +13,47 @@
                     <div class="col-lg-2"></div>
                     <!--Buffers column on left-->
                     <div class="col-lg-8 m-2">
-
-                        <input type="hidden" name="_next" value="#" />
-                        <input type="hidden" name="_subject" value="New submission!" />
+                        <!-- Recipe Name -->
                         <div class="form-group">
-                            <label for="InputName">Your Name</label>
-                            <input type="text" class="form-control" name="name" id="InputName"
-                                placeholder="Enter Name" >
+                            <label for="recipe-name-input">Recipe Name</label>
+                            <input type="text" class="form-control"  id="recipe-name-input"
+                                placeholder="Enter Recipe Name" >
                         </div>
+                        <!-- Recipe Cook Time -->
                         <div class="form-group">
-                            <label for="InputEmail">Your Email</label>
+                            <label for="recipe-time-input">Cook Time</label>
 
-                            <input type="email" class="form-control" id="InputEmail" name="_replyto"
-                                placeholder="Enter Email" >
+                            <input type="number" class="form-control" id="recipe-time-input" 
+                                placeholder="Enter Cook Time" >
                         </div>
+                        <!-- Recipe Serving Size -->
                         <div class="form-group">
-                            <label for="InputMessage">Message</label>
+                            <label for="recipe-servings-input">Servings</label>
 
-                            <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5"
-                                ></textarea>
+                            <input type="number" class="form-control" id="recipe-servings-input" 
+                                placeholder="Enter # of servings" >
                         </div>
+                        <!-- Recipe Photo Input -->
+                        <div class="form-group">
+                            <label for="recipe-photo-input">Image URL</label>
 
+                            <input type="text" class="form-control" id="recipe-photo-input" 
+                                placeholder="Please enter a valid URL" >
+                        </div>                        
+                        <!-- Recipe Credit Name Input -->
+                        <div class="form-group">
+                            <label for="recipe-credit-name-input">Credit Name</label>
 
+                            <input type="text" class="form-control" id="recipe-credit-name-input" 
+                                placeholder="Please enter the credit source" >
+                        </div>   
+                        <!-- Recipe Credit URL Input -->
+                        <div class="form-group">
+                            <label for="recipe-credit-URL-input">Credit URL</label>
+
+                            <input type="text" class="form-control" id="recipe-credit-URL-input" 
+                                placeholder="Please enter the source URL" >
+                        </div>   
                     </div>
                     <hr class="hidden-lg">
                 </div>
@@ -42,7 +61,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 
-                    <input type="submit" name="submit" id="submit" data-dismiss="modal" value="SUBMIT" class="btn btn-info pull-right">
+                    <input type="submit" name="submit" id="submit"  value="SUBMIT" class="btn btn-info pull-right">
                 </div>
             </form>
         </div>
