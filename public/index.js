@@ -80,6 +80,7 @@ function handleModalAcceptClick() {
   });
 
     hideAddRecipeModal();
+    clearAddRecipeModalInputs();
 
   // }
 
@@ -221,23 +222,11 @@ document.addEventListener('DOMContentLoaded', function () {
   /*
    * Remember all of the initial post elements initially displayed in the page.
    */
+  console.log("DOM content loaded");
+
   var recipeElems = document.getElementsByClassName('recipe');
   for (var i = 0; i < recipeElems.length; i++) {
     allRecipes.push(parseRecipeElem(recipeElems[i]));
-  }
-  var addRecipeButton = document.getElementById('add-recipe-button');
-  if (addRecipeButton) {
-    addRecipeButton.addEventListener('click', showAddRecipeModal);
-  }
-
-  var modalAcceptButton = document.getElementById('modal-accept');
-  if (modalAcceptButton) {
-    modalAcceptButton.addEventListener('click', handleModalAcceptClick);
-  }
-
-  var modalHideButtons = document.getElementsByClassName('modal-hide-button');
-  for (var i = 0; i < modalHideButtons.length; i++) {
-    modalHideButtons[i].addEventListener('click', hideAddRecipeModal);
   }
 
   var filterUpdateButton = document.getElementById('filter-update-button');
