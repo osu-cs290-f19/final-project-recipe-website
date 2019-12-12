@@ -63,8 +63,8 @@ function handleModalAcceptClick() {
 
   allRecipes.push(recipeContent);
 
-    hideAddRecipeModal();
-    clearAddRecipeModalInputs();
+  hideAddRecipeModal();
+  clearAddRecipeModalInputs();
 
 }
 
