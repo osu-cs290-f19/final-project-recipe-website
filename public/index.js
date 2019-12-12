@@ -5,9 +5,6 @@
  * Description: JavaScript for snacc.io
  */
 
-
-
-
 function insertNewRecipe(recipeName, time, complexity, servings, originalImageURL, creditName, creditURL) {
 
   /* TODO this function is never called???*/
@@ -53,11 +50,6 @@ function handleModalAcceptClick() {
   var creditName = document.getElementById('recipe-credit-name-input').value.trim();
   var creditURL = document.getElementById('recipe-credit-URL-input').value.trim();
 
-  // if (!recipeName || !time || !complexity || !servings || !originalImageURL || !creditName) {
-  //   alert("You must fill in all of the fields!");
-  // } else {
-
-  // the content to be stored into JSON
   var recipeContent = {
       recipeName: recipeName,
       time: time,
@@ -69,20 +61,10 @@ function handleModalAcceptClick() {
   };
   console.log('Captured a new recipe from user:' + recipeContent);
 
-  allRecipes.push({
-    recipeName: recipeName,
-    time: time,
-    complexity: complexity,
-    servings: servings,
-    originalImageURL: originalImageURL,
-    creditName: creditName,
-    creditURL: creditURL
-  });
+  allRecipes.push(recipeContent);
 
     hideAddRecipeModal();
     clearAddRecipeModalInputs();
-
-  // }
 
 }
 
@@ -106,10 +88,6 @@ function clearFiltersAndReinsertRecipes() {
 
 }
 
-
-/*
- * This function clears any user-entered inputs in the "sell something" modal.
- */
 function clearAddRecipeModalInputs() {
   document.getElementById('recipe-name-input').value = "";
   document.getElementById('recipe-time-input').value = "";
@@ -119,12 +97,6 @@ function clearAddRecipeModalInputs() {
   document.getElementById('recipe-credit-URL-input').value = "";
 }
 
-
-/*
- * This function hides the "sell something" modal by adding the "hidden"
- * class from the modal and backdrop.  It also clears any existing inputs in
- * the modal's input fields when the modal is hidden.
- */
 function hideAddRecipeModal() {
 
  $('#addRecipeModal').hide();
@@ -133,10 +105,6 @@ function hideAddRecipeModal() {
 }
 
 
-/*
- * A function to apply the current filters to a specific post.  Returns true
- * if the post passes the filters and should be displayed and false otherwise.
- */
 function recipePassesFilters(recipe, filters) {
 
   if (filters.text) {
@@ -158,13 +126,7 @@ function recipePassesFilters(recipe, filters) {
 }
 
 
-/*
- * Applies the filters currently entered by the user to the set of all posts.
- * Any post that satisfies the user's filter values will be displayed,
- * including posts that are not currently being displayed because they didn't
- * satisfy an old set of filters.  Posts that don't satisfy the filters are
- * removed from the DOM.
- */
+
 function doFilterUpdate() {
 
   console.log('in doFilterUpdate()');
@@ -178,10 +140,7 @@ function doFilterUpdate() {
     recipeContainer.removeChild(recipeContainer.lastChild);
   }
 
-  /*
-   * Loop through the collection of all "post" elements and re-insert ones
-   * that meet the current filtering criteria.
-   */
+ 
   allRecipes.forEach(function (recipe) {
     if (recipePassesFilters(recipe, filters)) {
       /* TODO: insertNewRecipe is not a real function? */
@@ -192,11 +151,7 @@ function doFilterUpdate() {
 }
 
 
-/*
- * This function parses an existing DOM element representing a single post
- * into an object representing that post and returns that object.  The object
- * is structured like this:
- */
+
 function parseRecipeElem(recipeElem) {
 
 
@@ -205,11 +160,6 @@ function parseRecipeElem(recipeElem) {
 }
 
 
-/*
- * This function gets all of the data fields from a recipe as text in order to apply the search function.
- *
- *
- */
 
 function getRecipeText(recipeElem) {
 
@@ -219,9 +169,7 @@ function getRecipeText(recipeElem) {
  * Wait until the DOM content is loaded, and then hook up UI interactions, etc.
  */
 document.addEventListener('DOMContentLoaded', function () {
-  /*
-   * Remember all of the initial post elements initially displayed in the page.
-   */
+
   console.log("DOM content loaded");
 
   var recipeElems = document.getElementsByClassName('recipe');
