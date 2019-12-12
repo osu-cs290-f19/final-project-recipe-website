@@ -59,22 +59,24 @@ app.get('*', function (req, res) {
 
 app.post('/recipes', function (req, res){
   if (req.body && req.body.recipeName) {
-    console.log("== Client added the following recipe:");
-    console.log("  - name:", req.body.recipeName);
+    recipeData.push({
+        recipeName: req.body.recipeName,
+        time: req.body.time,
+        complexity: req.body.complexity,
+        servings: req.body.servings,
+        originalImageURL: req.body.originalImageURL,
+        creditName: req.body.creditName,
+        creditURL: req.body.creditURL
+    });
+    fs.writeFile('./recipeData.json', JSON.stringify(recipeData, null, 4), (err) => {
+      if(err) {
+        console.error(err);
+        return;
+      };
+      console.log("Recipe Saved.");
+    });
 
-  var recipeObj = {
-      recipeName: req.body.recipeName,
-      time: req.body.time,
-      complexity: req.body.complexity,
-      servings: req.body.servings,
-      originalImageURL: req.body.originalImageURL,
-      creditName: req.body.creditName,
-      creditURL: req.body.creditURL
-  };
-
-  var requestBody = JSON.stringify(recipeObj);
-
-    res.status(200).send("Photo successfully added");
+    res.status(200).send("Recipe successfully added");
   } else {
     res.status(400).send("Requests to this path must " +
       "contain a JSON body with all recipe Content " +
