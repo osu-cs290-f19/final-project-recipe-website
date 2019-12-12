@@ -5,21 +5,6 @@
  * Description: JavaScript for snacc.io
  */
 
-function insertNewRecipe(recipeName, time, complexity, servings, originalImageURL, creditName, creditURL) {
-
-  /* TODO this function is never called???*/
-
-  // the content to be placed via handlebars
-  var recipeContent = {
-      recipeName: recipeName,
-      time: time,
-      complexity: complexity,
-      servings: servings,
-      originalImageURL: originalImageURL,
-      creditName: creditName,
-      creditURL: creditURL
-  };
-
   // a string containing the HTML
   var recipeHTML = Handlebars.templates.recipe(recipeContent);
   submitRecipe(recipeContent);
@@ -68,6 +53,7 @@ function handleModalAcceptClick() {
   console.log('Captured a new recipe from user:' + recipeContent);
 
   allRecipes.push(recipeContent);
+  submitRecipe(recipeContent);
 
   hideAddRecipeModal();
   clearAddRecipeModalInputs();
