@@ -5,6 +5,9 @@
  * Description: JavaScript for snacc.io
  */
 
+
+
+
 function insertNewRecipe(recipeName, time, complexity, servings, originalImageURL, creditName, creditURL) {
 
   /* TODO this function is never called???*/
@@ -33,32 +36,26 @@ function insertNewRecipe(recipeName, time, complexity, servings, originalImageUR
 
 function submitRecipe() {
   console.log("recipe submitted");
+  handleModalAcceptClick();
 }
 
-/*
- * These arrays hold the collection of all post objects and the list of all
- * cities that have been used in posts.
- */
+
 var allRecipes = [];
-/*
- * This function checks whether all of the required inputs were supplied by
- * the user and, if so,i nserting a new post into the page constructed using
- * these inputs.  If the user did not supply a required input, they instead
- * recieve an alert, and no new post is inserted.
- */
+
+
 function handleModalAcceptClick() {
   console.log('in handleModalAcceptClick');
   var recipeName = document.getElementById('recipe-name-input').value.trim();
   var time = document.getElementById('recipe-time-input').value.trim();
-  var complexity = document.querySelector('#recipe-complexity-fieldset input:checked').value;
+  var complexity = "_";
   var servings = document.getElementById('recipe-servings-input').value.trim();
   var originalImageURL = document.getElementById('recipe-photo-input').value.trim();
   var creditName = document.getElementById('recipe-credit-name-input').value.trim();
   var creditURL = document.getElementById('recipe-credit-URL-input').value.trim();
 
-  if (!recipeName || !time || !complexity || !servings || !originalImageURL || !creditName) {
-    alert("You must fill in all of the fields!");
-  } else {
+  // if (!recipeName || !time || !complexity || !servings || !originalImageURL || !creditName) {
+  //   alert("You must fill in all of the fields!");
+  // } else {
 
   // the content to be stored into JSON
   var recipeContent = {
@@ -73,10 +70,9 @@ function handleModalAcceptClick() {
   console.log('Captured a new recipe from user:' + recipeContent);
 
   // save to JSON file
-  fs.appendFile('recipeData.json', recipeContent, function (err) {
-    if (err) throw err;
-  console.log('Saved recipe to recipeData.json!');
-  });
+  // fs.writeFile('recipeData.json', JSON.stringify(recipeContent), function (err) {
+  //   console.log(err);
+  // });
 
   allRecipes.push({
     recipeName: recipeName,
@@ -92,7 +88,7 @@ function handleModalAcceptClick() {
 
     hideAddRecipeModal();
 
-  }
+  // }
 
 }
 
