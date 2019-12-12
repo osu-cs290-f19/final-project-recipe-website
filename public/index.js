@@ -5,35 +5,26 @@
  * Description: JavaScript for snacc.io
  */
 
-function insertNewRecipe(recipeName, time, complexity, servings, originalImageURL, creditName, creditURL) {
+//   // a string containing the HTML
+//   var recipeHTML = Handlebars.templates.recipe(recipeContent);
+//   submitRecipe(recipeContent);
 
-  /* TODO this function is never called???*/
+//   // insert into DOM
+//   var recipeContainer = document.getElementById('recipes');
+//   recipeContainer.insertAdjacentHTML('beforeend', recipeHTML);
 
-  // the content to be placed via handlebars
-  var recipeContent = {
-      recipeName: recipeName,
-      time: time,
-      complexity: complexity,
-      servings: servings,
-      originalImageURL: originalImageURL,
-      creditName: creditName,
-      creditURL: creditURL
-  };
+//   console.log("== New recipe added with addRecipe().");
 
-  // a string containing the HTML
-  var recipeHTML = Handlebars.templates.recipe(recipeContent);
+// }
 
-  // insert into DOM
-  var recipeContainer = document.getElementById('recipes');
-  recipeContainer.insertAdjacentHTML('beforeend', recipeHTML);
+function submitRecipe(newRecipe) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "http://localhost:3000/recipes");
+  xhr.setRequestHeader("Content-Type", "application/json");
+  console.log(JSON.stringify(newRecipe));
+  xhr.send(JSON.stringify(newRecipe));
+  console.log("recipe submmited");
 
-  console.log("== New recipe added with addRecipe().");
-
-}
-
-function submitRecipe() {
-  console.log("recipe submitted");
-  handleModalAcceptClick();
 }
 
 
@@ -62,6 +53,7 @@ function handleModalAcceptClick() {
   console.log('Captured a new recipe from user:' + recipeContent);
 
   allRecipes.push(recipeContent);
+  submitRecipe(recipeContent);
 
   hideAddRecipeModal();
   clearAddRecipeModalInputs();
