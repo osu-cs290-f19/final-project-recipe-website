@@ -59,10 +59,20 @@ app.get('*', function (req, res) {
 
 app.post('/recipes', function (req, res){
   if (req.body && req.body.recipeName) {
-    console.log("== Client added the following photo:");
+    console.log("== Client added the following recipe:");
     console.log("  - name:", req.body.recipeName);
 
-    // Add photo to DB here.
+  var recipeObj = {
+      recipeName: req.body.recipeName,
+      time: req.body.time,
+      complexity: req.body.complexity,
+      servings: req.body.servings,
+      originalImageURL: req.body.originalImageURL,
+      creditName: req.body.creditName,
+      creditURL: req.body.creditURL
+  };
+
+  var requestBody = JSON.stringify(recipeObj);
 
     res.status(200).send("Photo successfully added");
   } else {
