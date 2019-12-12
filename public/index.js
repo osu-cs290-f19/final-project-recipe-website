@@ -87,7 +87,6 @@ function hideAddRecipeModal() {
 
 }
 
-
 function recipePassesFilters(recipe, filters) {
 
   if (filters.text) {
@@ -108,21 +107,15 @@ function recipePassesFilters(recipe, filters) {
 
 }
 
-
-
 function doFilterUpdate() {
 
   console.log('in doFilterUpdate()');
   //TODO
 
-  /*
-   * Remove all "post" elements from the DOM.
-   */
   var recipeContainer = document.getElementById('recipes');
   while(recipeContainer.lastChild) {
     recipeContainer.removeChild(recipeContainer.lastChild);
   }
-
  
   allRecipes.forEach(function (recipe) {
     if (recipePassesFilters(recipe, filters)) {
@@ -133,13 +126,9 @@ function doFilterUpdate() {
 
 }
 
-
-
 function parseRecipeElem(recipeElem) {
 
 }
-
-
 
 function getRecipeText(recipeElem) {
 
