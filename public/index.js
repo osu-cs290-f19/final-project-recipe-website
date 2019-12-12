@@ -189,6 +189,7 @@ function recipePassesFilters(recipe, filters) {
  */
 function doFilterUpdate() {
 
+  console.log('in doFilterUpdate()');
   //TODO
 
   /*
@@ -239,8 +240,8 @@ function getRecipeText(recipeElem) {
 /*
  * Wait until the DOM content is loaded, and then hook up UI interactions, etc.
  */
-window.addEventListener('DOMContentLoaded', function () {
-
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('DOM Content Loaded...');
   /*
    * Remember all of the initial post elements initially displayed in the page.
    */
