@@ -57,6 +57,21 @@ app.get('*', function (req, res) {
   res.status(404).render('404');
 });
 
+app.post('/recipes', function (req, res){
+  if (req.body && req.body.recipeName) {
+    console.log("== Client added the following photo:");
+    console.log("  - name:", req.body.recipeName);
+
+    // Add photo to DB here.
+
+    res.status(200).send("Photo successfully added");
+  } else {
+    res.status(400).send("Requests to this path must " +
+      "contain a JSON body with all recipe Content " +
+      "fields.");
+  }
+});
+
 app.listen(port, function () {
   console.log("== Server is listening on port", port);
 });
