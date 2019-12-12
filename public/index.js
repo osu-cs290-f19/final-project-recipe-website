@@ -144,11 +144,9 @@ function clearAddRecipeModalInputs() {
  */
 function hideAddRecipeModal() {
 
-  var showAddRecipeModal = document.getElementById('add-recipe-modal');
-  var modalBackdrop = document.getElementById('modal-backdrop');
+  var AddRecipeModal = document.getElementById('addRecipeModal');
 
-  showAddRecipeModal.classList.add('hidden');
-  modalBackdrop.classList.add('hidden');
+  AddRecipeModal.classList.add('hidden');
 
   clearAddRecipeModalInputs();
 
@@ -241,7 +239,6 @@ function getRecipeText(recipeElem) {
  * Wait until the DOM content is loaded, and then hook up UI interactions, etc.
  */
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('DOM Content Loaded...');
   /*
    * Remember all of the initial post elements initially displayed in the page.
    */
@@ -261,7 +258,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var modalHideButtons = document.getElementsByClassName('modal-hide-button');
   for (var i = 0; i < modalHideButtons.length; i++) {
-    console.log("added listener to hideModal");
     modalHideButtons[i].addEventListener('click', hideAddRecipeModal);
   }
 
