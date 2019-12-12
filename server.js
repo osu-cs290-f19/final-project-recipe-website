@@ -3,6 +3,7 @@
  var express = require('express');
  var exphbs = require('express-handlebars');
  var fs = require('fs'); // require filesystem to append new recipes
+ var bodyParser = require('body-parser');
 
  var app = express();
 
@@ -19,6 +20,8 @@ app.set('view engine', 'handlebars');
 // *note: Express looks up files relative to the static directory,
 //        so the name of directory 'public' is not part of the URL.
 app.use(express.static('public'));
+
+app.use(bodyParser.json());
 
 // after a client request, print URL and method to console
 function logger (req, res, next) {
